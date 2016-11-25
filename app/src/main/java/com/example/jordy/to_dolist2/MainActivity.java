@@ -96,16 +96,21 @@ public class MainActivity extends AppCompatActivity {
 
                 TextView item = (TextView) findViewById(R.id.todo_element);
                 item.setPaintFlags(item.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+
+                Toast.makeText(MainActivity.this, "Item Done!", Toast.LENGTH_SHORT).show();
             }
         });
 
-        todolist.setOnLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public void OnItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                DBhelper dbHelper = new DBhelper(DBHelper.class);
-                dbHelper.delete(R.id.todo_element);
-            }
-        });
+//        todolist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+//            @Override
+//            public boolean onItemClick(AdapterView<?> parent, View view,
+//                                    int position, long id) {
+//
+//                Toast.makeText(MainActivity.this, "Item Deleted", Toast.LENGTH_SHORT).show();
+//
+//                return true;
+//            }
+//        });
 
 
     }
